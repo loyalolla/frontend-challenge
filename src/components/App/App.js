@@ -7,8 +7,9 @@ export function App() {
   return (
     <>
       <Router>
-        <header className="">
-          header
+        <header className={styles.header}>
+          <Link className={styles.link} to="/">Все котики</Link>
+          <Link to="/favourites">Любимые котики</Link>
         </header>
         <main>
           <Switch>

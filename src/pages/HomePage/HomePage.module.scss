@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    // grid-template-columns: repeat(5, minmax(225px, 1fr));
+    // grid-template-rows: minmax(225px, 1fr);
+    grid-template-rows: 18vw;
+    grid-template-columns: repeat(auto-fit, 18vw);
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    gap: 48px;
+    padding: 48px 62px;
+}
+
+.cardContainer {
+    // overflow: hidden;
+}

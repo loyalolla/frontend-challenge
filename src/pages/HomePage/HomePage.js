@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "../../components/Card";
-import { request } from "../../utils/Api";
+import { request } from "../../utils";
+import styles from './HomePage.module.scss';
 
 export function HomePage() {
     const [images, setImages] = useState([]);
@@ -10,18 +11,18 @@ export function HomePage() {
             setImages(data);
         });
     }, []);
+
     return (
-        <div>
+        <div className={styles.container}>
             {
                 images.map((image) => {
                     return (
-                        <React.Fragment key={image.id}>
+                        <div className={styles.cardContainer} key={image.id} >
                           <Card
-                           id={image.id}
-                           url={image.url}
+                            id={image.id}
+                            url={image.url}
                           />
-
-                        </React.Fragment>
+                        </div>
                     )
                 })
             }

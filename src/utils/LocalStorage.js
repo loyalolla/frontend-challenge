@@ -9,10 +9,18 @@ class LocalStorage {
     if (!key) {
       return null;
     }
-    return localStorage.getItem(`${this.prefix}_${key}`)
+    const value = localStorage.getItem(`${this.prefix}_${key}`);
+
+    if (typeof value === 'string') {
+      try {
+        return JSON.parse(value);
+      } catch (e) {
+        return null;
+      }
+    }
+    return null;
   }
 
-  // TODO: сохранять объекты и массивы
   set(key = '', value) {
     if (!key || !value) {
       return null;
@@ -20,7 +28,7 @@ class LocalStorage {
 
     const prefixedKey = `${this.prefix}_${key}`;
 
-    localStorage.setItem(prefixedKey, value);
+    localStorage.setItem(prefixedKey, JSON.stringify(value));
     return value;
   }
 }

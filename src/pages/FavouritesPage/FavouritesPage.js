@@ -1,3 +1,28 @@
+import { useEffect, useState } from "react";
+import { Card } from "../../components/Card";
+import { ls } from "../../utils";
+import styles from '../HomePage/HomePage.module.scss';
+
 export function FavouritesPage() {
-    return 'adadasd2';
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    const favList = ls.get("fav") || [];
+    setList(favList);
+    console.log(favList);
+  }, []);
+
+  return (
+    <div className={styles.container}>
+      {list.map((imageId) => {
+        return (
+          <div key={imageId}>
+            <Card
+              id={imageId}
+              url={`https://cdn2.thecatapi.com/images/${imageId}.jpg`}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
 }

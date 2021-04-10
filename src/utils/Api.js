@@ -1,7 +1,7 @@
 const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL = 'https://api.thecatapi.com';
 const apiMap = {
-    search: '/v1/images/search?size=full&limit=20'
+    search: '/v1/images/search?size=full&mime_types=jpg&limit=20'
 };
 
 export const request = (type) => {

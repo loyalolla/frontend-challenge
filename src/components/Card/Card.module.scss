@@ -1,4 +1,4 @@
-@import '../../style/globalVars.scss';
+@import "../../style/globalVars.scss";
 
 .imgContainer {
   background-color: $white;
@@ -44,7 +44,7 @@
   }
 
   &Clicked {
-    display: block;
-    background-image: url("/icons/heart_filled_liked.svg");
-  }
+      display: none;
+      background-image: url("/icons/heart_filled_liked.svg");
+    }
 }

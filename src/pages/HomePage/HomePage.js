@@ -38,7 +38,7 @@ export function HomePage() {
 
       <div className={styles.buttonContainer}>
         {loading ? (
-          <div>... загружаем еще котиков ...</div>
+          <div className={styles.loadingText}>... загружаем еще котиков ...</div>
         ) : (
           <div className={styles.button}>
             {" "}

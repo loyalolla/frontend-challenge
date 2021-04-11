@@ -13,16 +13,18 @@ export function FavouritesPage() {
 
   return (
     <div className={styles.container}>
-      {list.map((imageId) => {
-        return (
-          <div key={imageId}>
-            <Card
-              id={imageId}
-              url={`https://cdn2.thecatapi.com/images/${imageId}.jpg`}
-            />
-          </div>
-        );
-      })}
+      <div className={styles.imagesContainer}>
+        {list.map((imageId) => {
+          return (
+            <div key={imageId}>
+              <Card
+                id={imageId}
+                url={`https://cdn2.thecatapi.com/images/${imageId}.jpg`}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

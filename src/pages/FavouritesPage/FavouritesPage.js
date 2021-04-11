@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "../../components/Card";
 import { ls } from "../../utils";
-import styles from "../HomePage/HomePage.module.scss";
+import styles from "../Page.module.scss";
 
 export function FavouritesPage() {
   const [list, setList] = useState([]);

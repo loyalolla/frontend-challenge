@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "../../components/Card";
 import { request } from "../../utils";
-import styles from "./HomePage.module.scss";
+import styles from "../Page.module.scss";
 
 export function HomePage() {
   const [images, setImages] = useState([]);

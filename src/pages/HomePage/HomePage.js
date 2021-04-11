@@ -29,7 +29,9 @@ export function HomePage() {
       <div className={styles.imagesContainer}>
         {images.map((image, index) => {
           return (
-            <div className={styles.cardContainer} key={image.id + index}>
+            // прибавляем index, потому что
+            // могут прийти одинаковые картинки из api
+            <div key={image.id + index}>
               <Card id={image.id} url={image.url} />
             </div>
           );

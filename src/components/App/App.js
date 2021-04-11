@@ -12,6 +12,7 @@ export function App() {
   return (
     <>
       <Router basename={process.env.PUBLIC_URL}>
+        {/* пока приложение маленькое, хедер не выносим в отдельный файл */}
         <header className={styles.header}>
           <NavLink
             exact

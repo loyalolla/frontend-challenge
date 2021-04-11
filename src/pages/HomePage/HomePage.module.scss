@@ -29,3 +29,9 @@
 .cardContainer {
   // overflow: hidden;
 }
+
+.emptyText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

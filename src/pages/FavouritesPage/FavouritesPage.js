@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Card } from "../../components/Card";
 import { ls } from "../../utils";
 import styles from '../HomePage/HomePage.module.scss';
@@ -8,13 +9,18 @@ export function FavouritesPage() {
   useEffect(() => {
     const favList = ls.get("fav") || [];
     setList(favList);
-    console.log(favList);
   }, []);
 
   return (
     <div className={styles.container}>
+      <div className={styles.emptyText}>
+        {!list.length && (<>
+          <div>У вас нет любимых котиков 😿</div>
+          <Link to="/">Начать выбирать котиков</Link>
+        </>)}
+      </div>
       <div className={styles.imagesContainer}>
-        {list.map((imageId) => {
+        {list.length > 0 && list.map((imageId) => {
           return (
             <div key={imageId}>
               <Card

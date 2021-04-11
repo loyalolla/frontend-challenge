@@ -6,7 +6,7 @@ import { HomePage, FavouritesPage } from '../../pages';
 export function App() {
   return (
     <>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <header className={styles.header}>
           <NavLink exact activeClassName={styles.linkActive} className={styles.link} to="/">Все котики</NavLink>
           <NavLink exact activeClassName={styles.linkActive} className={styles.link} to="/favourites">Любимые котики</NavLink>

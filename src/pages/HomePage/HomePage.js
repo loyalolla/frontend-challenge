@@ -43,8 +43,7 @@ export function HomePage() {
           <div className={styles.loadingText}>... загружаем еще котиков ...</div>
         ) : (
           <div className={styles.button}>
-            {" "}
-            <button onClick={handleClick}>загрузить еще котиков</button>{" "}
+            <button onClick={handleClick}>загрузить еще котиков 🐈</button>
           </div>
         )}
       </div>

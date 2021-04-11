@@ -1,15 +1,34 @@
-import styles from './App.module.scss';
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
-import { HomePage, FavouritesPage } from '../../pages';
+import styles from "./App.module.scss";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
+import { HomePage, FavouritesPage } from "../../pages";
 
 export function App() {
   return (
     <>
       <Router basename={process.env.PUBLIC_URL}>
         <header className={styles.header}>
-          <NavLink exact activeClassName={styles.linkActive} className={styles.link} to="/">Все котики</NavLink>
-          <NavLink exact activeClassName={styles.linkActive} className={styles.link} to="/favourites">Любимые котики</NavLink>
+          <NavLink
+            exact
+            activeClassName={styles.linkActive}
+            className={styles.link}
+            to="/"
+          >
+            Все котики
+          </NavLink>
+          <NavLink
+            exact
+            activeClassName={styles.linkActive}
+            className={styles.link}
+            to="/favourites"
+          >
+            Любимые котики
+          </NavLink>
         </header>
         <main>
           <Switch>

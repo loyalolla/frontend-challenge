@@ -8,6 +8,11 @@ export function Card(props) {
   const { id, url } = props;
   const [liked, setLiked] = useState(false);
 
+  const isAlreadyLiked = () => {
+    const favList = ls.get("fav") || [];
+    return favList.includes(id);
+  };
+
   const handleClick = (id) => {
     setLiked(!liked);
     const oldFav = ls.get("fav") || [];
@@ -23,9 +28,8 @@ export function Card(props) {
     ls.set("fav", newFav);
   };
   useEffect(() => {
-    const favList = ls.get("fav") || [];
-    if (favList.includes(id)){
-        setLiked(true);
+    if (isAlreadyLiked()) {
+      setLiked(true);
     }
   }, []);
 

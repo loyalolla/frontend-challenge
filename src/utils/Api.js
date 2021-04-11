@@ -19,7 +19,10 @@ export const request = (type, props) => {
       "x-api-key": API_KEY,
     },
   }).then((response) => {
-    // todo proverka
-    return response.json();
+    if (response.ok) {
+      return response.json();
+    }
+
+    throw new Error(response.status);
   });
 };

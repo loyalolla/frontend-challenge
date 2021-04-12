@@ -1,7 +1,7 @@
 @import "../../style/globalVars.scss";
 
 .imgContainer {
-  background-color: $white;
+  background-color: $silver;
   cursor: pointer;
   position: relative;
   width: 100%;
@@ -44,7 +44,10 @@
   }
 
   &Clicked {
-      display: none;
+    // не совсем понятно в макете как должна отображаться иконка лайка, в любимых котиках,
+    // поставила ее в статическое положение, если нужно чтобы она появлялась только при наведении,
+    // то тогда нужно поставить display:none;
+      display: block;
       background-image: url("/icons/heart_filled_liked.svg");
     }
 }
